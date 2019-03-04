@@ -389,6 +389,7 @@ object GroupMetadataManager {
   private val GENERATION_KEY = "generation"
   private val PROTOCOL_KEY = "protocol"
   private val LEADER_KEY = "leader"
+  private val CURRENT_STATE_TIMESTAMP_KEY = "current_state_timestamp"
   private val MEMBERS_KEY = "members"
 
   private val GROUP_METADATA_VALUE_SCHEMA_V0 = new Schema(
@@ -410,6 +411,7 @@ object GroupMetadataManager {
     new Field(GENERATION_KEY, INT32),
     new Field(PROTOCOL_KEY, NULLABLE_STRING),
     new Field(LEADER_KEY, NULLABLE_STRING),
+    new Field(CURRENT_STATE_TIMESTAMP_KEY, INT64),
     new Field(MEMBERS_KEY, new ArrayOf(MEMBER_METADATA_V2)))
 
   // map of versions to key schemas as data types
